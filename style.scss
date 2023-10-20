@@ -19,7 +19,7 @@
     }
 }
 
-.svg-button {
+.button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +29,7 @@
     border: 2px solid $accent-color;
   }
   
-  .svg-button svg {
+  .button svg {
     width: 24px;
     height: 24px;
     fill: #555555;
@@ -39,10 +39,11 @@
 /*--------------main-----------------*/
 
 .main-block {
+    margin-top: 30px;
 }
 .main-block__noTasks {
     text-align: center;
-    padding-top: 70px;
+    padding-top: 40px;
     font-size: 24px;
     font-family: Inter, sans-serif;
     color: #fff;

@@ -2,6 +2,7 @@ body {
     background-color: #1E1E24;
     color: #F0E3CA;
     font-family: 'Roboto', sans-serif;
+    padding-top: 20px;
 }
 
 .container {
@@ -10,5 +11,8 @@ body {
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+}
+
+.none {
+    display: none;
 }
