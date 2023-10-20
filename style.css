@@ -26,6 +26,8 @@
   border: 1px solid #FF8303;
   width: 260px;
   border-radius: 5px;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
 }
 
 .button {
@@ -42,12 +44,25 @@
   border-radius: 4px;
   cursor: pointer;
   border: 2px solid #FF8303;
+  -webkit-transition: background-color 0.1s ease-in;
+  transition: background-color 0.1s ease-in;
 }
-
+.button:hover {
+  background-color: #2b2a2a;
+}
 .button svg {
   width: 24px;
   height: 24px;
-  fill: #555555;
+  fill: #FF8303;
+}
+.button--item {
+  padding: 10px;
+}
+.button--item svg {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 10px;
+  height: 10px;
 }
 
 /*--------------/upper---------------*/
@@ -86,6 +101,34 @@
   width: 64px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.main-block__tasks li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 2px solid #FF8303;
+  border-radius: 8px;
+  padding: 10px 16px 16px;
+}
+.main-block__tasks li + li {
+  margin-top: 20px;
+}
+
+.task__text h2 {
+  font-size: 22px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+.task__text p {
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
 }
 
 /*--------------/main-----------------*/
