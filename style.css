@@ -211,3 +211,24 @@
 }
 
 /*--------------/popup-----------------*/
+/*--------------popup-footer-----------------*/
+.popup-share__block-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #1B1A17;
+  height: 76px;
+  border-radius: 10px 10px 0 0;
+}
+
+.social-svg circle {
+  fill: #23221F;
+}
+.social-svg path {
+  fill: #F0E3CA;
+}

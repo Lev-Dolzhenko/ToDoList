@@ -201,3 +201,32 @@
     }
 }
 /*--------------/popup-----------------*/
+/*--------------popup-footer-----------------*/
+.popup-share {
+}
+
+.popup-share__block {
+}
+
+.popup-share__block-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #1B1A17;
+    
+    height: 76px;
+
+    border-radius: 10px 10px 0 0;
+}
+
+.social-svg {
+    circle {
+        fill: #23221F;
+    };
+
+    path {
+        fill: #F0E3CA;
+    }
+}
+
