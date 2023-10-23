@@ -151,3 +151,53 @@
     margin-bottom: 16px;
 }
 /*--------------/main-----------------*/
+/*--------------popup-----------------*/
+
+
+.popup-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    width: 280px;
+    height: 140px;
+    border: 1px solid $accent-color-black;
+    border-top: 5px solid $accent-color-black;
+    border-radius: 0 0 10px 10px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #1E1E24;
+
+    h3 {
+        color: #fff;
+        font-size: 18px;
+        font-family: Roboto, sans-serif;
+        font-weight: regular;
+        text-align: center;
+    }
+}
+
+.popup-buttons__wrap {
+    display: flex;
+    column-gap: 10px;
+}
+
+.popup-button {
+    display: inline-block;
+    width: 64px;
+    height: 24px;
+    border: 1px solid $accent-color-black;
+    border-radius: 4px;
+    
+    transition: border-color 0.1s ease-in;
+
+    &:hover {
+        border-color: $accent-color;
+    }
+}
+/*--------------/popup-----------------*/

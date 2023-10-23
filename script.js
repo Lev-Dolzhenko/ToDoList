@@ -10,6 +10,7 @@ let task = document.querySelector('.main-block__task');
 let addButons = document.querySelector('.main-block__buttons-additional');
 let tss = document.querySelector('.main-block__task-main');
 
+
 let toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
 
 let displayMessage = () => {
@@ -99,7 +100,6 @@ addMessage.addEventListener('click', function () {
     title.value = '';
     subtitile.value = '';
 });
-
 
 
 
