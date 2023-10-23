@@ -57,7 +57,18 @@
 
 
     }
-}
+
+    &--additional {
+        padding: 10px;
+        & svg {
+            width: 16px;
+            height: 16px;
+            fill: #D9D9D9;
+        }
+            
+        }
+    }
+
 
 /*--------------/upper---------------*/
 /*--------------main-----------------*/
@@ -100,10 +111,8 @@
     }
 }
 
-.main-block__wrapper {}
-
 .main-block__tasks {
-    li {
+    .main-block__task {
         display: flex;
         align-items: top;
         justify-content: space-between;
@@ -114,9 +123,7 @@
         padding: 10px 16px 16px;
     }
 
-    li+li {
-        margin-top: 20px;
-    }
+
 }
 
 .task__text {
@@ -132,4 +139,14 @@
     }
 }
 
+
+.main-block__buttons-additional {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 8px;
+
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
 /*--------------/main-----------------*/
