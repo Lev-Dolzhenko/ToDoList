@@ -6,6 +6,9 @@ let addMessage = document.querySelector('.button-add');
 let todo = document.querySelector('.main-block__tasks');
 let noTasks = document.querySelector('.main-block__noTasks');
 let removeMessage = document.querySelector('.button--remove');
+let task = document.querySelector('.main-block__task');
+let addButons = document.querySelector('.main-block__buttons-additional');
+let tss = document.querySelector('.main-block__task-main');
 
 let toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
 
@@ -31,7 +34,7 @@ let displayMessage = () => {
             </div>
         </div>
     </div>
-    <div class="main-block__buttons-additional">
+    <div class="main-block__buttons-additional none">
         <button class="button button--additional">
             <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -54,9 +57,17 @@ let displayMessage = () => {
 </li>
 `;
     });
-
     todo.innerHTML = displayMessage;
     setupRemovalButtons();
+
+    document.querySelectorAll('.main-block__tasks-main').forEach((task) => {
+        task.addEventListener('click', function () {
+            let additionalButtons = this.parentNode.querySelector('.main-block__buttons-additional');
+            additionalButtons.classList.toggle('none');
+        });
+    });
+    
+
     if (toDoList.length > 0) { //Сделать через тернарник
         noTasks.classList.add('none');
     } else {
@@ -88,6 +99,9 @@ addMessage.addEventListener('click', function () {
     title.value = '';
     subtitile.value = '';
 });
+
+
+
 
 displayMessage();
 setupRemovalButtons();

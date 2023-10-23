@@ -124,6 +124,7 @@
   border: 2px solid #FF8303;
   border-radius: 8px;
   padding: 10px 16px 16px;
+  margin-bottom: 10px;
 }
 
 .task__text h2 {
