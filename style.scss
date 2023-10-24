@@ -1,5 +1,12 @@
 @import './vars.scss';
 
+/*--------------animations---------------*/
+@keyframes show-popup-share {
+    from {
+        bottom: -90px;
+    }
+}
+/*--------------/animations---------------*/
 /*--------------upper---------------*/
 .upper-row {
     display: flex;
@@ -202,11 +209,6 @@
 }
 /*--------------/popup-----------------*/
 /*--------------popup-footer-----------------*/
-.popup-share {
-}
-
-.popup-share__block {
-}
 
 .popup-share__block-list {
     display: flex;
@@ -227,6 +229,27 @@
 
     path {
         fill: #F0E3CA;
+        transition: fill 0.1s ease-in;
+    }
+
+    &:hover {
+        path {
+            fill: $accent-color;
+        }
     }
 }
 
+
+.phone__footer {
+    animation-name: show-popup-share;
+    animation-duration: 2s;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+
+/*--------------/popup-footer-----------------*/

@@ -1,9 +1,14 @@
+@import './vars.scss';
+
 body {
     background-color: #1E1E24;
     color: #F0E3CA;
     font-family: 'Roboto', sans-serif;
-    padding-top: 20px;
+    padding-top: 20px;          
+    
 }
+
+
 
 .container {
     width: 385px;
@@ -16,3 +21,21 @@ body {
 .none {
     display: none;
 }
+
+.phone {
+    position: relative;
+    height: 710px;
+    width: 385px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+
+    overflow: hidden;
+
+    border: 5px solid #4d4c4c;
+    border-radius: 10px;
+}
+
+
+
+

@@ -1,3 +1,15 @@
+/*--------------animations---------------*/
+@-webkit-keyframes show-popup-share {
+  from {
+    bottom: -90px;
+  }
+}
+@keyframes show-popup-share {
+  from {
+    bottom: -90px;
+  }
+}
+/*--------------/animations---------------*/
 /*--------------upper---------------*/
 .upper-row {
   display: -webkit-box;
@@ -231,4 +243,22 @@
 }
 .social-svg path {
   fill: #F0E3CA;
+  -webkit-transition: fill 0.1s ease-in;
+  transition: fill 0.1s ease-in;
 }
+.social-svg:hover path {
+  fill: #FF8303;
+}
+
+.phone__footer {
+  -webkit-animation-name: show-popup-share;
+          animation-name: show-popup-share;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/*--------------/popup-footer-----------------*/
