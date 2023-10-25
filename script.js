@@ -1,22 +1,24 @@
+const subtitile = document.querySelector('.subtitle');
+const title = document.querySelector('.title');
+const addMessage = document.querySelector('.button-add');
+const todo = document.querySelector('.main-block__tasks');
+const noTasks = document.querySelector('.main-block__noTasks');
+const removeMessage = document.querySelector('.button--remove');
+const task = document.querySelector('.main-block__task');
+const addButons = document.querySelector('.main-block__buttons-additional');
+const tss = document.querySelector('.main-block__task-main');
+const buttonShare = document.querySelector('.button--share');
+const footerShare = document.querySelector('.phone__footer');
+
+const toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
 
 
-let subtitile = document.querySelector('.subtitle')
-let title = document.querySelector('.title');
-let addMessage = document.querySelector('.button-add');
-let todo = document.querySelector('.main-block__tasks');
-let noTasks = document.querySelector('.main-block__noTasks');
-let removeMessage = document.querySelector('.button--remove');
-let task = document.querySelector('.main-block__task');
-let addButons = document.querySelector('.main-block__buttons-additional');
-let tss = document.querySelector('.main-block__task-main');
 
-let toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+const displayMessage = () => {
+  let displayMessage = '';
 
-let displayMessage = () => {
-    let displayMessage = '';
-
-    toDoList.forEach(function (item, i) {
-        displayMessage += `
+  toDoList.forEach((item, i) => {
+    displayMessage += `
         <li>
     <div class="main-block__tasks-main">
         <div class='main-block__task' data-index="${i}">
@@ -47,7 +49,7 @@ let displayMessage = () => {
                     d="M2.63281 3.54688V12H0.375V3.54688H2.63281ZM0.234375 1.34375C0.234375 1.01562 0.348958 0.744792 0.578125 0.53125C0.807292 0.317708 1.11458 0.210938 1.5 0.210938C1.88021 0.210938 2.1849 0.317708 2.41406 0.53125C2.64844 0.744792 2.76562 1.01562 2.76562 1.34375C2.76562 1.67188 2.64844 1.94271 2.41406 2.15625C2.1849 2.36979 1.88021 2.47656 1.5 2.47656C1.11458 2.47656 0.807292 2.36979 0.578125 2.15625C0.348958 1.94271 0.234375 1.67188 0.234375 1.34375Z" />
             </svg>
         </button>
-        <button class="button button--additional">
+        <button class="button button--additional button--share">
             <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M12.5556 10.9511C11.9645 10.9511 11.4356 11.1844 11.0311 11.55L5.48558 8.32222C5.52447 8.14333 5.55558 7.96444 5.55558 7.77778C5.55558 7.59111 5.52447 7.41222 5.48558 7.23333L10.9689 4.03667C11.3889 4.42556 11.9411 4.66667 12.5556 4.66667C13.8467 4.66667 14.8889 3.62444 14.8889 2.33333C14.8889 1.04222 13.8467 0 12.5556 0C11.2645 0 10.2222 1.04222 10.2222 2.33333C10.2222 2.52 10.2534 2.69889 10.2922 2.87778L4.80892 6.07444C4.38892 5.68556 3.83669 5.44444 3.22225 5.44444C1.93114 5.44444 0.888916 6.48667 0.888916 7.77778C0.888916 9.06889 1.93114 10.1111 3.22225 10.1111C3.83669 10.1111 4.38892 9.87 4.80892 9.48111L10.3467 12.7167C10.3078 12.88 10.2845 13.0511 10.2845 13.2222C10.2845 14.4744 11.3034 15.4933 12.5556 15.4933C13.8078 15.4933 14.8267 14.4744 14.8267 13.2222C14.8267 11.97 13.8078 10.9511 12.5556 10.9511Z" />
@@ -56,51 +58,58 @@ let displayMessage = () => {
     </div>
 </li>
 `;
-    });
-    todo.innerHTML = displayMessage;
-    setupRemovalButtons();
+  });
+  todo.innerHTML = displayMessage;
+  setupRemovalButtons();
 
-    document.querySelectorAll('.main-block__tasks-main').forEach((task) => {
-        task.addEventListener('click', function () {
-            let additionalButtons = this.parentNode.querySelector('.main-block__buttons-additional');
-            additionalButtons.classList.toggle('none');
-        });
+  document.querySelectorAll('.main-block__tasks-main').forEach((task) => {
+    task.addEventListener('click', function () {
+      const additionalButtons = this.parentNode.querySelector('.main-block__buttons-additional');
+      additionalButtons.classList.toggle('none');
     });
-    
+  });
 
-    if (toDoList.length > 0) { //Сделать через тернарник
-        noTasks.classList.add('none');
-    } else {
-        noTasks.classList.remove('none');
-    }
-}
+  if (toDoList.length > 0) { // Сделать через тернарник
+    noTasks.classList.add('none');
+  } else {
+    noTasks.classList.remove('none');
+  }
+};
 
 let setupRemovalButtons = () => {
-    document.querySelectorAll('.button--remove').forEach((btn) => {
-        btn.addEventListener('click', function () {
-            let index = Number(btn.parentNode.parentNode.getAttribute('data-index'));
-            toDoList.splice(index, 1);
-            localStorage.setItem('toDoList', JSON.stringify(toDoList));
-            displayMessage();
-        });
+  document.querySelectorAll('.button--remove').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const index = Number(btn.parentNode.parentNode.getAttribute('data-index'));
+      toDoList.splice(index, 1);
+      localStorage.setItem('toDoList', JSON.stringify(toDoList));
+      displayMessage();
     });
-}
+  });
+};
 
-addMessage.addEventListener('click', function () {
-    let newToDo = {
-        todoTitle: title.value,
-        todoSubtitle: subtitile.value,
-        important: false
-    };
+addMessage.addEventListener('click', () => {
+  const newToDo = {
+    todoTitle: title.value,
+    todoSubtitle: subtitile.value,
+    important: false,
+  };
 
-    toDoList.push(newToDo);
-    localStorage.setItem('toDoList', JSON.stringify(toDoList));
-    displayMessage();
-    title.value = '';
-    subtitile.value = '';
+  toDoList.push(newToDo);
+  localStorage.setItem('toDoList', JSON.stringify(toDoList));
+  displayMessage();
+  title.value = '';
+  subtitile.value = '';
 });
+/*
+let setupShareButtons = () => {
+    document.querySelectorAll('.button--share').forEach((buttonShare) => {
+      buttonShare.addEventListener('click', function() {
+        footerShare.classList.toggle('none');
+      });
+    });
+  };
+*/
+  displayMessage();
+  setupRemovalButtons();
+  //setupShareButtons();
 
-
-
-displayMessage();
-setupRemovalButtons();
