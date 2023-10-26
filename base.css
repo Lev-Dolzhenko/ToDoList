@@ -36,6 +36,8 @@ body {
     border-radius: 10px;
 }
 
-
+.button--remove svg {
+    pointer-events: none;
+}
 
 
