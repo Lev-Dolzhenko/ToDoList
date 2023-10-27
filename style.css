@@ -253,8 +253,8 @@
 .phone__footer {
   -webkit-animation-name: show-popup-share;
           animation-name: show-popup-share;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -262,3 +262,44 @@
 }
 
 /*--------------/popup-footer-----------------*/
+/*--------------popup-remake-----------------*/
+.phone__remake {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.popup-remake__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 8px;
+  padding-top: 18px;
+  height: 450px;
+  border-radius: 10px;
+  background-color: #1B1A17;
+}
+.popup-remake__block input {
+  height: 32px;
+  width: 310px;
+  border: 1px solid #FF8303;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+.popup-remake__block textarea {
+  width: 310px;
+  border: 1px solid #FF8303;
+  border-radius: 6px;
+  resize: none;
+  padding: 0 5px;
+}
+
+/*--------------/popup-remake-----------------*/

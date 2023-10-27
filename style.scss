@@ -6,6 +6,7 @@
         bottom: -90px;
     }
 }
+
 /*--------------/animations---------------*/
 /*--------------upper---------------*/
 .upper-row {
@@ -41,10 +42,10 @@
 
     transition: background-color 0.1s ease-in;
 
-        &:hover {
-            background-color: #2b2a2a;
+    &:hover {
+        background-color: #2b2a2a;
 
-        }
+    }
 
     & svg {
         width: 24px;
@@ -67,14 +68,15 @@
 
     &--additional {
         padding: 10px;
+
         & svg {
             width: 16px;
             height: 16px;
             fill: #D9D9D9;
         }
-            
-        }
+
     }
+}
 
 
 /*--------------/upper---------------*/
@@ -157,6 +159,7 @@
     margin-top: 8px;
     margin-bottom: 16px;
 }
+
 /*--------------/main-----------------*/
 /*--------------popup-----------------*/
 
@@ -200,13 +203,14 @@
     height: 24px;
     border: 1px solid $accent-color-black;
     border-radius: 4px;
-    
+
     transition: border-color 0.1s ease-in;
 
     &:hover {
         border-color: $accent-color;
     }
 }
+
 /*--------------/popup-----------------*/
 /*--------------popup-footer-----------------*/
 
@@ -216,7 +220,7 @@
     justify-content: space-around;
 
     background-color: #1B1A17;
-    
+
     height: 76px;
 
     border-radius: 10px 10px 0 0;
@@ -225,7 +229,9 @@
 .social-svg {
     circle {
         fill: #23221F;
-    };
+    }
+
+    ;
 
     path {
         fill: #F0E3CA;
@@ -253,3 +259,48 @@
 
 
 /*--------------/popup-footer-----------------*/
+/*--------------popup-remake-----------------*/
+
+.phone__remake {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.popup-remake__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+
+    padding-top: 18px;
+    ;
+    height: 450px;
+
+    border-radius: 10px;
+    background-color: #1B1A17;
+
+    input {
+        height: 32px;
+        width: 310px;
+        border: 1px solid $accent-color;
+        border-radius: 3px;
+
+        padding: 0 5px;
+
+    }
+
+    textarea {
+        width: 310px;
+        border: 1px solid $accent-color;
+        border-radius: 6px;
+
+        resize: none;
+
+        padding: 0 5px;
+    }
+}
+
+
+/*--------------/popup-remake-----------------*/

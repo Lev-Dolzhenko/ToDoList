@@ -127,7 +127,6 @@ const listTasks = document.querySelector('.main-block__tasks');
 const noTasks = document.querySelector('.main-block__noTasks');
 /*---------/Переменные для удаления плашки "No tasks"-----------*/
 
-
 buttonAddTask.addEventListener('click', addTask)
 listTasks.addEventListener('click', deleteTask)
 
